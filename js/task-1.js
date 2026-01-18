@@ -1,36 +1,21 @@
-const customer = {
-  username: 'Mango',
-  balance: 24000,
-  discount: 0.1,
-  orders: ['Burger', 'Pizza', 'Salad'],
+// 1. Select the categories list by ID
+const categoriesList = document.querySelector("#categories");
 
-  // Change code below this line
-  getBalance() {
-    return this.balance; // Added 'this' to access object property
-  },
+// 2. Select all list items with class 'item'
+const items = categoriesList.querySelectorAll(".item");
 
-  getDiscount() {
-    return this.discount; // Added 'this'
-  },
+// 3. Log the total number of categories
+console.log(`Number of categories: ${items.length}`);
 
-  setDiscount(value) {
-    this.discount = value; // Added 'this'
-  },
+// 4. Iterate over each category item
+items.forEach((item) => {
+  // 5. Find the category title (h2 tag)
+  const categoryTitle = item.querySelector("h2").textContent;
 
-  getOrders() {
-    return this.orders; // Added 'this'
-  },
+  // 6. Find all list items (li) within the current category
+  const elementsCount = item.querySelectorAll("ul li").length;
 
-  addOrder(cost, order) {
-    // Added 'this' to balance and discount
-    this.balance -= cost - cost * this.discount;
-    this.orders.push(order); // Added 'this'
-  },
-  // Change code above this line
-};
-
-customer.setDiscount(0.15);
-console.log(customer.getDiscount()); // 0.15
-customer.addOrder(5000, 'Steak');
-console.log(customer.getBalance()); // 19750
-console.log(customer.getOrders()); // ["Burger", "Pizza", "Salad", "Steak"]
+  // 7. Log the results to the console
+  console.log(`Category: ${categoryTitle}`);
+  console.log(`Elements: ${elementsCount}`);
+});

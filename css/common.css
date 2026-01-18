@@ -1,0 +1,273 @@
+/* --- Global Styles & Resets --- */
+
+/* 1. Import Montserrat font */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap");
+
+/* 2. Base box-sizing reset */
+* {
+  box-sizing: border-box;
+}
+
+/* 3. Global body styles based on Figma design */
+body {
+  font-family: "Montserrat", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  color: #2e2f42;
+  background-color: #fff;
+  margin: 0;
+  padding: 24px;
+  line-height: 1.5;
+}
+
+/* Reset default margins and padding for lists and headings */
+ul,
+ol {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* #region Task 1: Categories */
+#categories {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 392px;
+  margin-bottom: 48px;
+}
+
+#categories .item {
+  background-color: #f6f6fe;
+  padding: 16px;
+  border-radius: 8px;
+}
+
+#categories h2 {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.33;
+  letter-spacing: 0.04em;
+  margin-bottom: 16px;
+  color: #2e2f42;
+}
+
+#categories ul li {
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
+  border: 1px solid #808080;
+  border-radius: 4px;
+  padding: 8px 16px;
+  margin-bottom: 8px;
+  background-color: transparent;
+}
+
+#categories ul li:last-child {
+  margin-bottom: 0;
+}
+
+/* #endregion */
+
+/* #region Task 2: Gallery */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  column-gap: 24px;
+  row-gap: 48px;
+  max-width: 1440px;
+  margin: 100px auto 48px auto;
+}
+
+.gallery-item {
+  width: 360px;
+  height: 300px;
+  overflow: hidden;
+}
+
+.gallery-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.gallery-img:hover {
+  transform: scale(1.03);
+}
+
+/* #endregion */
+
+/* #region Task 3: Input Greeting */
+#name-input {
+  display: block;
+  width: 360px;
+  height: 40px;
+  padding: 8px 16px;
+  margin-bottom: 16px;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
+  border: 1px solid #808080;
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#name-input:hover {
+  border-color: #000;
+}
+
+#name-input:focus {
+  border-color: #4e75ff;
+}
+
+h1 {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.33;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
+  margin-bottom: 48px;
+}
+
+/* #endregion */
+
+/* #region Task 4: Login Form */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 408px;
+  padding: 24px;
+  border-radius: 8px;
+  background-color: #fff;
+  margin-bottom: 48px;
+}
+
+.login-form label {
+  display: block;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
+  margin-bottom: 8px;
+}
+
+.login-form input {
+  width: 100%;
+  height: 40px;
+  padding: 8px 16px;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
+  border: 1px solid #808080;
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.login-form input:hover {
+  border-color: #000;
+}
+
+.login-form input:focus {
+  border-color: #4e75ff;
+}
+
+.login-form button {
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  width: 86px;
+  height: 40px;
+  background: #4e75ff;
+
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.login-form button:hover,
+.login-form button:focus {
+  background-color: #6c8cff;
+}
+
+/* #endregion */
+
+/* #region Task 5: Widget */
+.widget {
+  max-width: 345px;
+  padding: 100px 88px;
+  background-color: #fff;
+  border-radius: 8px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.widget p {
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
+  margin-bottom: 16px;
+}
+
+.color {
+  font-family: monospace;
+  font-weight: 700;
+  color: #2e2f42;
+}
+
+.change-color {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #ffffff;
+  background-color: #4e75ff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.change-color:hover,
+.change-color:focus {
+  background-color: #6c8cff;
+}
+
+/* #endregion */

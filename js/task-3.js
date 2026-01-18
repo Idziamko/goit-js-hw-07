@@ -1,38 +1,13 @@
-class StringBuilder {
-  // 1. Declare a private property
-  #value;
+// 1. Select the input and the output span elements
+const nameInput = document.querySelector("#name-input");
+const nameOutput = document.querySelector("#name-output");
 
-  constructor(initialValue) {
-    this.#value = initialValue; // Initialize private property
-  }
+// 2. Add an event listener for the 'input' event
+nameInput.addEventListener("input", (event) => {
+  // 3. Get the current value and trim whitespace from the edges
+  const inputValue = event.currentTarget.value.trim();
 
-  // Method to get current value
-  getValue() {
-    return this.#value;
-  }
-
-  // Method to append string to the end
-  padEnd(str) {
-    this.#value += str;
-  }
-
-  // Method to prepend string to the start
-  padStart(str) {
-    this.#value = str + this.#value;
-  }
-
-  // Method to add string to both start and end
-  padBoth(str) {
-    this.padStart(str);
-    this.padEnd(str);
-  }
-}
-
-const builder = new StringBuilder('.');
-console.log(builder.getValue()); // "."
-builder.padStart('^');
-console.log(builder.getValue()); // "^."
-builder.padEnd('^');
-console.log(builder.getValue()); // "^.^"
-builder.padBoth('=');
-console.log(builder.getValue()); // "=^.^="
+  // 4. Update the text content of the span
+  // If the input is empty, display "Anonymous", otherwise display the value
+  nameOutput.textContent = inputValue === "" ? "Anonymous" : inputValue;
+});

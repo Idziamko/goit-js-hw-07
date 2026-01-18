@@ -1,36 +1,42 @@
-class Storage {
-  // 1. Declare a private property
-  #items;
+const images = [
+  {
+    url: "https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?dpr=2&h=750&w=1260",
+    alt: "White and Black Long Fur Cat",
+  },
+  {
+    url: "https://images.pexels.com/photos/213399/pexels-photo-213399.jpeg?dpr=2&h=750&w=1260",
+    alt: "Orange and White Koi Fish Near Yellow Koi Fish",
+  },
+  {
+    url: "https://images.pexels.com/photos/219943/pexels-photo-219943.jpeg?dpr=2&h=750&w=1260",
+    alt: "Group of Horses Running",
+  },
+  {
+    url: "https://cdn.pixabay.com/photo/2019/05/17/09/27/the-alps-4209272_1280.jpg",
+    alt: "Alpine Spring Meadows",
+  },
+  {
+    url: "https://cdn.pixabay.com/photo/2019/05/16/21/10/landscape-4208255_1280.jpg",
+    alt: "Nature Landscape",
+  },
+  {
+    url: "https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843_1280.jpg",
+    alt: "Lighthouse Coast Sea",
+  },
+];
 
-  constructor(items) {
-    this.#items = items; // Initialize private property
-  }
+// 1. Select the gallery list element
+const gallery = document.querySelector(".gallery");
 
-  // Method to get current items
-  getItems() {
-    return this.#items;
-  }
+// 2. Create the HTML markup string using map and template literals
+const markup = images
+  .map(
+    (image) =>
+      `<li class="gallery-item">
+        <img src="${image.url}" alt="${image.alt}" class="gallery-img" />
+      </li>`,
+  )
+  .join(""); // Join the array of strings into a single string
 
-  // Method to add a new item
-  addItem(newItem) {
-    this.#items.push(newItem);
-  }
-
-  // Method to remove an item by name
-  removeItem(itemToRemove) {
-    // Filter out the item that needs to be removed
-    this.#items = this.#items.filter((item) => item !== itemToRemove);
-  }
-}
-
-const storage = new Storage(['Nanitoids', 'Prolonger', 'Antigravitator']);
-console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator"]
-
-storage.addItem('Droid');
-console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator", "Droid"]
-
-storage.removeItem('Prolonger');
-console.log(storage.getItems()); // ["Nanitoids", "Antigravitator", "Droid"]
-
-storage.removeItem('Scaner');
-console.log(storage.getItems()); // ["Nanitoids", "Antigravitator", "Droid"]
+// 3. Insert the markup into the DOM in one operation
+gallery.insertAdjacentHTML("beforeend", markup);
